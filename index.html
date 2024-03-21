@@ -10,27 +10,59 @@
 
 <!-- Tema opcional -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
 </head>
 <body>
 
-
-    <!--Formulário-->
+    <!--Formulário-->    
     <div class="login-container d-flex justify-content-center align-items-center">
-        <form method="POST" class="login-form text-center" action="app/controller/ControllerUsuario.php">
-          <h1 class="mb-3 font-weight-light text-uppercase">Cálculo IMC</h1>
-            
+        <form id="form1">
+          <h1 class="mb-3 font-weight-light text-uppercase">Cálculo IMC</h1>        
+          
+          <div class="form-group">
+            <input type="text" name="nome" id='nome' required placeholder="Nome:" class="form-control form-control-lg" onpaste="return false" ondrop="return false">
+          </div>
+          
           <div class="form-group">
             <input type="text" name="altura" id='altura' required placeholder="Altura:" class="form-control form-control-lg" onpaste="return false" ondrop="return false">
           </div>
             
           <div class="form-group">
             <input type="text" name="peso" id="peso" required placeholder="Peso:" class="form-control form-control-lg" onpaste="return false" ondrop="return false">
-          </div>
-
-          <button type="submit" class="btn btn-primary" name="logar" value="logar">Calcular</button>
+          </div>       
         </form>
     </div>
+     
+    <!--Script para o calculo-->  
+    <!--
+    <script type="text/javascript">
+        function imc() {
+            var altura = document.getElementById("altura").value;
+            var peso = document.getElementById("peso").value;
+            var nome = document.getElementById("nome").value;    
+            var m = peso / altura * altura;
+        
+                if (m < 16){
+                    var i = 'Baixo peso muito grave';
+                } else if (m > 16 && m < 16.99) {
+                    var i = 'Baixo peso grave';
+                } else if (m > 17 && m < 18.49) {
+                    var i = 'Baixo peso';
+                } else if (m > 18.50 && m < 24.99) {
+                    var i = 'Peso normal';
+                } else if (m > 24 && m < 29.99) {
+                    var i = 'Sobrepeso';
+                } else if (m > 30 && m < 34.99) {
+                    var i = 'Obesidade de primeiro grau';
+                } else if (m > 35 && m < 39.99) {
+                    var i = 'Obesidade de segundo grau'; 
+                } else if (m > 40) {
+                    var i = 'Obesidade de terceiro grau';
+                }
+                document.write(nome + " você possui indice de massa corporal igual a " + m + " sendo classificado como " + i);
+        }
+    </script>-->
 
-    
+    <button type="submit" class="btn btn-primary" name="logar" value="logar" onclick="imc()">Calcular</button>
 </body>
 </html>
