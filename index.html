@@ -3,9 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Atividade 07</title>
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Tema opcional -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 </head>
 <body>
+
+
+    <!--Formulário-->
+    <div class="login-container d-flex justify-content-center align-items-center">
+        <form method="POST" class="login-form text-center" action="app/controller/ControllerUsuario.php">
+          <h1 class="mb-3 font-weight-light text-uppercase">Cálculo IMC</h1>
+            
+          <div class="form-group">
+            <input type="text" name="altura" id='altura' required placeholder="Altura:" class="form-control form-control-lg" onpaste="return false" ondrop="return false">
+          </div>
+            
+          <div class="form-group">
+            <input type="text" name="peso" id="peso" required placeholder="Peso:" class="form-control form-control-lg" onpaste="return false" ondrop="return false">
+          </div>
+
+          <button type="submit" class="btn btn-primary" name="logar" value="logar">Calcular</button>
+        </form>
+    </div>
+
     
 </body>
 </html>
